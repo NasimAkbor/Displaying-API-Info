@@ -5,6 +5,7 @@ let nextSlide = document.querySelector('.next');
 let prevSlide = document.querySelector('.prev');
 let digiPho = document.querySelector('.digimonPhoto');
 let digiName = document.querySelector('.digiName');
+let digiName2 = document.querySelector('.digiName2');
 
 let digi = fetch('https://digimon-api.vercel.app/api/digimon');
 digi.then((response) =>
@@ -14,6 +15,7 @@ digi.then((response) =>
     console.log(items)
     digiName.innerHTML = `${items[0][0].name}`
     digiPho.src = items[0][0].img;
+    digiName2.innerHTML = `${items[0][0].name}`
 
   })
 
@@ -28,6 +30,8 @@ function neverEnding() {
 function addInfo() {
   digiName.innerHTML = `${items[0][slideIndex].name}`;
   digiPho.src = items[0][slideIndex].img;
+  digiName2.innerHTML = `${items[0][slideIndex].name}`;
+
 }
 
 function clearItAll() {
